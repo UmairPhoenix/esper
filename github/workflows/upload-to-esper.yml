@@ -1,0 +1,19 @@
+name: Upload File to Esper
+
+on: [push]
+
+jobs:
+  upload-file:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Upload file to Esper
+      uses: mheap/github-action-http-request@v1
+      with:
+        url: 'https://ypwyz-api.esper.cloud/api/v0/enterprise/5f216b83-5cb7-45fd-8b25-27e86900fcf1/content/upload/'
+        method: 'POST'
+        headers: '{"Authorization": "Bearer ${{ secrets.ESPER_API_TOKEN }}"}'
+        form: '{"key": "sample.apk"}'
