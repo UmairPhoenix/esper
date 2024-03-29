@@ -11,9 +11,8 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Upload file to Esper
-      uses: mheap/github-action-http-request@v1
-      with:
-        url: 'https://{{tenant_name}}-api.esper.cloud/api/v0/enterprise/{{enterprise_id}}/content/upload/'
-        method: 'POST'
-        headers: '{"Authorization": "Bearer ${{ secrets.ESPER_API_TOKEN }}"}'
-        form: '{"key": "@samplefile.txt"}'
+      run: |
+        curl -X POST \
+          https://ypwyz-api.esper.cloud/api/v0/enterprise/5f216b83-5cb7-45fd-8b25-27e86900fcf1/content/upload/ \
+          -H 'Authorization: Bearer ${{ secrets.ESPER_API_TOKEN }}' \
+          -F 'key=@sample.apk'
