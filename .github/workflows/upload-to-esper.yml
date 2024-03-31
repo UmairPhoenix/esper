@@ -17,4 +17,4 @@ jobs:
          -H "Authorization: Bearer $ESPER_API_KEY" \
          -H "Content-Type: multipart/form-data" \
          -H "Accept-Encoding: gzip, deflate, br" \
-         -F "application=@esper/sample.apk"
+         -F "application=@esper/small.apk"
