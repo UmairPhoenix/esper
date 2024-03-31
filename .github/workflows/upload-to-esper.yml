@@ -15,4 +15,5 @@ jobs:
         curl -X POST \
           https://ypwyz-api.esper.cloud/api/v0/enterprise/5f216b83-5cb7-45fd-8b25-27e86900fcf1/content/upload/ \
           -H 'Authorization: Bearer ${{ secrets.ESPER_API_TOKEN }}' \
-          -F 'key=@./sample.apk'
+          -F 'key=@esper/sample.apk'
+
