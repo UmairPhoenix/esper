@@ -1,1 +1,20 @@
 
+## comment
+name: Manual workflow configuration
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to run tests against'
+        type: choice
+        required: true
+        options:
+        - staging
+        - dev
+jobs:
+  build_and_upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the source code
+        uses: actions/checkout@v2
+
